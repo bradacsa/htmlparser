@@ -61,13 +61,13 @@ class HTMLparser{
         }
         
         /* Search element by tagname */
-        searchResult search(std::string tagname){
+        /*searchResult search(std::string tagname){
             searchResult resultVector;
             searchResult* scPtr = &resultVector;
 
             //searchEngine(tagname, scPtr, emittedHTML);
             return resultVector;
-        }
+        }*/
         
         /* Search by the given props */
         searchResult searchBy(std::vector<searchOps> searchParams){
@@ -918,7 +918,7 @@ int main(int argc, char **argv){
     myfile.close();
 
     HTMLparser parser = HTMLparser(HTML);
-    HTMLparser::searchResult result = parser.search("meta");
+    //HTMLparser::searchResult result = parser.search("meta");
     //HTMLparser::htmlElement e = parser.getElementByPath(result[0]);
     HTMLparser::searchResult res = parser.searchBy({{"meta", HTMLparser::searchBys::TAGNAME}, {"property", HTMLparser::searchBys::ATTRIBUTE_NAME}, {"article:published_time", HTMLparser::searchBys::ATTRIBUTE_VALUE}});
  
